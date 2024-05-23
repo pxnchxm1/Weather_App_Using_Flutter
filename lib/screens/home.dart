@@ -12,7 +12,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
-    bool _issearched = false;
+    bool issearched = false;
     Size screensize = MediaQuery.of(context).size;
     return Scaffold(
       resizeToAvoidBottomInset: false,
@@ -61,8 +61,14 @@ class _HomePageState extends State<HomePage> {
                         ),
                         child: Padding(
                           padding: const EdgeInsets.only(
-                              left: 10.0, right: 10, bottom: 8),
-                          child: TextFormField(),
+                              left: 20.0, right: 20, bottom: 3),
+                          child: TextFormField(
+                              maxLines: 1,
+                              style: GoogleFonts.cormorantUpright(
+                                  color:
+                                      const Color.fromARGB(186, 214, 233, 206),
+                                  fontSize: 25,
+                                  fontWeight: FontWeight.normal)),
                         )),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -70,7 +76,7 @@ class _HomePageState extends State<HomePage> {
                         splashColor: const Color.fromARGB(255, 47, 53, 48),
                         onTap: () {
                           setState(() {
-                            _issearched = !_issearched;
+                            issearched = !issearched;
                           });
                         },
                         child: const Icon(Icons.search_outlined,
